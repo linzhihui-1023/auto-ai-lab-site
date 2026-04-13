@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>网站维护后台</title>
+  <link rel="stylesheet" href="admin.css?v=20260413a">
+</head>
+<body>
+  <main class="admin-shell">
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <p class="admin-kicker">Maintenance Console</p>
+        <h1>网站维护后台</h1>
+        <p class="admin-copy">适合你后续本地维护页面内容，再推到 GitHub Pages。</p>
+      </div>
+
+      <div class="admin-card">
+        <button class="primary-btn" id="pick-directory" type="button">选择网站文件夹</button>
+        <p class="admin-tip">建议在 `http://127.0.0.1:8000/admin.html` 打开。Chrome/Edge 体验最好。</p>
+        <p class="admin-status" id="directory-status">当前未连接站点目录</p>
+      </div>
+
+      <div class="admin-card">
+        <h2>页面列表</h2>
+        <nav class="file-list" id="file-list" aria-label="可编辑文件列表"></nav>
+      </div>
+
+      <div class="admin-card">
+        <h2>部署提示</h2>
+        <ol class="admin-list">
+          <li>本地改完后保存文件。</li>
+          <li>用 Git 提交并推到 GitHub 仓库。</li>
+          <li>GitHub Pages 会自动更新站点。</li>
+        </ol>
+      </div>
+    </aside>
+
+    <section class="admin-main">
+      <header class="editor-head">
+        <div>
+          <p class="admin-kicker">Current File</p>
+          <h2 id="editor-title">请选择左侧文件</h2>
+          <p class="editor-path" id="editor-path">尚未加载文件</p>
+        </div>
+        <div class="editor-actions">
+          <button class="secondary-btn" id="reload-file" type="button" disabled>重新读取</button>
+          <button class="secondary-btn" id="download-file" type="button" disabled>下载当前文件</button>
+          <button class="secondary-btn" id="preview-file" type="button" disabled>预览页面</button>
+          <button class="primary-btn" id="save-file" type="button" disabled>保存修改</button>
+        </div>
+      </header>
+
+      <section class="editor-card">
+        <div class="editor-toolbar">
+          <label class="checkbox-row">
+            <input id="wrap-toggle" type="checkbox" checked>
+            <span>自动换行</span>
+          </label>
+          <p class="admin-tip">后台当前编辑的是源文件内容。页面文字、HTML 结构和样式都能改。</p>
+        </div>
+        <textarea id="file-editor" spellcheck="false" placeholder="连接站点目录后，这里会显示文件内容。"></textarea>
+      </section>
+
+      <section class="editor-grid">
+        <article class="admin-card">
+          <h2>推荐维护方式</h2>
+          <ul class="admin-list">
+            <li>`index.html`：首页内容</li>
+            <li>`research.html`：研究方向</li>
+            <li>`equipment.html`：设备与图片</li>
+            <li>`members.html`：成员介绍</li>
+            <li>`achievements.html`：研究成果</li>
+            <li>`contact.html`：加入我们</li>
+            <li>`site.css`：全站样式</li>
+          </ul>
+        </article>
+
+        <article class="admin-card">
+          <h2>注意事项</h2>
+          <ul class="admin-list">
+            <li>图片和视频建议继续放在 `assets/` 目录管理。</li>
+            <li>保存前可以先点“预览页面”查看当前文件。</li>
+            <li>如果要对外生效，保存后还需要推到 GitHub。</li>
+          </ul>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <script src="admin.js?v=20260413a"></script>
+</body>
+</html>
