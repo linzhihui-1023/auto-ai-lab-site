@@ -202,11 +202,11 @@ button {
 }
 
 .banner {
-  height: 310px;
+  height: 370px;
   border: 1px solid var(--line);
   background:
     linear-gradient(96deg, rgba(7, 44, 74, 0.56), rgba(7, 44, 74, 0.12) 38%, rgba(69, 41, 18, 0.18) 72%, rgba(34, 18, 9, 0.3)),
-    url("assets/home-banner.jpeg") center center / cover no-repeat;
+    url("assets/home-banner.jpeg") center 16% / cover no-repeat;
   position: relative;
   overflow: hidden;
 }
@@ -1383,7 +1383,7 @@ body[data-lang="zh"] .equipment-meta-nowrap {
   }
 
   .banner {
-    height: 240px;
+    height: 292px;
   }
 
   .banner-grid {
@@ -1448,7 +1448,7 @@ body[data-lang="zh"] .equipment-meta-nowrap {
   }
 
   .banner {
-    height: 180px;
+    height: 228px;
   }
 
   .banner-grid {
