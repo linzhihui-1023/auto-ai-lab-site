@@ -205,10 +205,8 @@ button {
   height: 310px;
   border: 1px solid var(--line);
   background:
-    linear-gradient(110deg, rgba(22, 103, 168, 0.56), rgba(22, 103, 168, 0.06) 34%, rgba(195, 134, 44, 0.2) 66%, rgba(92, 37, 23, 0.36)),
-    radial-gradient(circle at 12% 78%, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0) 28%),
-    radial-gradient(circle at 88% 16%, rgba(255, 235, 186, 0.54), rgba(255, 235, 186, 0) 18%),
-    linear-gradient(135deg, #4f89aa 0%, #7ea8a0 28%, #a8c1a1 45%, #8ea78e 58%, #ac8354 72%, #7a5436 100%);
+    linear-gradient(96deg, rgba(7, 44, 74, 0.56), rgba(7, 44, 74, 0.12) 38%, rgba(69, 41, 18, 0.18) 72%, rgba(34, 18, 9, 0.3)),
+    url("assets/home-banner.jpeg") center center / cover no-repeat;
   position: relative;
   overflow: hidden;
 }
