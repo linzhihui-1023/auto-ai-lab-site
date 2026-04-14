@@ -33,7 +33,11 @@ function applyLanguage(lang) {
   i18nNodes.forEach((node) => {
     const value = node.dataset[lang];
     if (!value) return;
-    node.textContent = value;
+    if (value.includes("<br>")) {
+      node.innerHTML = value;
+    } else {
+      node.textContent = value;
+    }
   });
 
   langButtons.forEach((button) => {

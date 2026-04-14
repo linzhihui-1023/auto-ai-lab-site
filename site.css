@@ -202,21 +202,14 @@ button {
 }
 
 .banner {
-  height: 370px;
+  height: 470px;
   border: 1px solid var(--line);
   background:
-    linear-gradient(96deg, rgba(7, 44, 74, 0.56), rgba(7, 44, 74, 0.12) 38%, rgba(69, 41, 18, 0.18) 72%, rgba(34, 18, 9, 0.3)),
-    url("assets/home-banner.jpeg") center 16% / cover no-repeat;
+    linear-gradient(180deg, rgba(8, 31, 54, 0.04), rgba(8, 31, 54, 0.14) 72%, rgba(8, 31, 54, 0.26)),
+    url("assets/home-banner.jpeg?v=20260414d") center 8% / cover no-repeat,
+    #dce7f4;
   position: relative;
   overflow: hidden;
-}
-
-.banner::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, rgba(7, 31, 55, 0.36), rgba(7, 31, 55, 0.04) 44%, rgba(7, 31, 55, 0));
 }
 
 .banner-grid {
@@ -563,6 +556,11 @@ button {
 .equipment-photo-grid-left {
   grid-template-columns: repeat(auto-fit, 220px);
   justify-content: start;
+}
+
+.equipment-photo-grid-right {
+  grid-template-columns: repeat(2, 220px);
+  justify-content: end;
 }
 
 .equipment-photo-card {
@@ -1278,6 +1276,11 @@ body[data-lang="zh"] .equipment-meta-nowrap {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .equipment-photo-grid-right {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: stretch;
+  }
+
   .professor-grid {
     gap: 14px;
     justify-items: start;
@@ -1309,6 +1312,10 @@ body[data-lang="zh"] .equipment-meta-nowrap {
 
 @media (max-width: 640px) {
   .equipment-photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .equipment-photo-grid-right {
     grid-template-columns: 1fr;
   }
 
@@ -1383,7 +1390,7 @@ body[data-lang="zh"] .equipment-meta-nowrap {
   }
 
   .banner {
-    height: 292px;
+    height: 382px;
   }
 
   .banner-grid {
@@ -1448,7 +1455,7 @@ body[data-lang="zh"] .equipment-meta-nowrap {
   }
 
   .banner {
-    height: 228px;
+    height: 306px;
   }
 
   .banner-grid {
