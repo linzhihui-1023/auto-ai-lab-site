@@ -49,7 +49,7 @@ function applyLanguage(lang) {
     menuToggle.textContent = lang === "en" ? "Menu" : "菜单";
   }
 
-  window.localStorage.setItem("site-lang", lang);
+  window.sessionStorage.setItem("site-lang", lang);
 }
 
 langButtons.forEach((button) => {
@@ -58,4 +58,4 @@ langButtons.forEach((button) => {
   });
 });
 
-applyLanguage(window.localStorage.getItem("site-lang") || "zh");
+applyLanguage(window.sessionStorage.getItem("site-lang") || "zh");
