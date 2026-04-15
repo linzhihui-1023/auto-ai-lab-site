@@ -10,6 +10,52 @@ videos.forEach((video) => {
   video.volume = 0;
 });
 
+function initBannerSlider() {
+  const banner = document.querySelector(".banner");
+  if (!banner) return;
+
+  const slides = [...banner.querySelectorAll(".banner-slide")];
+  const dots = [...banner.querySelectorAll(".banner-dot")];
+  const prevButton = banner.querySelector(".banner-control-prev");
+  const nextButton = banner.querySelector(".banner-control-next");
+  if (slides.length <= 1) return;
+
+  let activeIndex = Math.max(0, slides.findIndex((slide) => slide.classList.contains("is-active")));
+  let timer = null;
+
+  const showSlide = (nextIndex) => {
+    activeIndex = (nextIndex + slides.length) % slides.length;
+    slides.forEach((slide, index) => {
+      slide.classList.toggle("is-active", index === activeIndex);
+    });
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("is-active", index === activeIndex);
+      dot.setAttribute("aria-current", index === activeIndex ? "true" : "false");
+    });
+  };
+
+  const startAutoPlay = () => {
+    window.clearInterval(timer);
+    timer = window.setInterval(() => showSlide(activeIndex + 1), 5200);
+  };
+
+  const moveTo = (nextIndex) => {
+    showSlide(nextIndex);
+    startAutoPlay();
+  };
+
+  prevButton?.addEventListener("click", () => moveTo(activeIndex - 1));
+  nextButton?.addEventListener("click", () => moveTo(activeIndex + 1));
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => moveTo(index));
+  });
+
+  banner.addEventListener("mouseenter", () => window.clearInterval(timer));
+  banner.addEventListener("mouseleave", startAutoPlay);
+  showSlide(activeIndex);
+  startAutoPlay();
+}
+
 if (menuToggle && nav) {
   menuToggle.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("is-open");
@@ -172,4 +218,5 @@ langButtons.forEach((button) => {
 });
 
 applyLanguage(window.sessionStorage.getItem("site-lang") || "zh");
+initBannerSlider();
 syncHomeSections();

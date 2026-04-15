@@ -207,20 +207,105 @@ button {
 .banner {
   height: 470px;
   border: 1px solid var(--line);
-  background:
-    linear-gradient(180deg, rgba(8, 31, 54, 0.04), rgba(8, 31, 54, 0.14) 72%, rgba(8, 31, 54, 0.26)),
-    url("assets/home-banner.jpeg?v=20260414d") center 8% / cover no-repeat,
-    #dce7f4;
+  background: #dce7f4;
   position: relative;
   overflow: hidden;
+}
+
+.banner-slides {
+  position: absolute;
+  inset: 0;
+}
+
+.banner-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  opacity: 0;
+  transition: opacity 0.55s ease;
+}
+
+.banner-slide.is-active {
+  opacity: 1;
+}
+
+.banner-slide:first-child {
+  object-position: center 42%;
+}
+
+.banner-slide:nth-child(2) {
+  object-position: center 44%;
+}
+
+.banner-slide:nth-child(3) {
+  object-position: center 45%;
 }
 
 .banner-grid {
   position: absolute;
   inset: 0;
+  z-index: 1;
   padding: 24px 28px;
   display: flex;
   align-items: flex-end;
+  background: linear-gradient(180deg, rgba(8, 31, 54, 0.04), rgba(8, 31, 54, 0.14) 72%, rgba(8, 31, 54, 0.28));
+}
+
+.banner-control {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  width: 34px;
+  height: 46px;
+  border: 0;
+  border-radius: 2px;
+  background: rgba(14, 31, 49, 0.34);
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background 0.18s ease, opacity 0.18s ease;
+}
+
+.banner-control:hover {
+  background: rgba(14, 31, 49, 0.56);
+}
+
+.banner-control-prev {
+  left: 16px;
+}
+
+.banner-control-next {
+  right: 16px;
+}
+
+.banner-dots {
+  position: absolute;
+  right: 24px;
+  bottom: 18px;
+  z-index: 2;
+  display: flex;
+  gap: 8px;
+}
+
+.banner-dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.36);
+  cursor: pointer;
+}
+
+.banner-dot.is-active {
+  width: 24px;
+  border-radius: 999px;
+  background: #fff;
 }
 
 .banner-copy {
@@ -1108,17 +1193,18 @@ body[data-lang="zh"] .equipment-meta-nowrap {
   overflow: hidden;
   background: transparent;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding: 14px 16px;
+  height: 344px;
+  padding: 12px;
 }
 
 .achievement-photo {
   display: block;
-  width: 100%;
-  max-width: 78%;
-  height: 260px;
-  object-fit: contain;
+  width: 240px;
+  height: 320px;
+  object-fit: cover;
+  object-position: center center;
   background: transparent;
 }
 
@@ -1302,8 +1388,8 @@ body[data-lang="zh"] .equipment-meta-nowrap {
   }
 
   .achievement-photo {
-    height: 250px;
-    max-width: 84%;
+    width: 220px;
+    height: 294px;
   }
 }
 
@@ -1370,8 +1456,8 @@ body[data-lang="zh"] .equipment-meta-nowrap {
   }
 
   .achievement-photo {
-    height: 240px;
-    max-width: 84%;
+    width: 220px;
+    height: 294px;
   }
 }
 
@@ -1491,6 +1577,25 @@ body[data-lang="zh"] .equipment-meta-nowrap {
 
   .banner-grid {
     padding: 18px;
+  }
+
+  .banner-control {
+    width: 30px;
+    height: 40px;
+    font-size: 1.65rem;
+  }
+
+  .banner-control-prev {
+    left: 10px;
+  }
+
+  .banner-control-next {
+    right: 10px;
+  }
+
+  .banner-dots {
+    right: 18px;
+    bottom: 14px;
   }
 
   .professor {
@@ -1625,11 +1730,14 @@ body[data-lang="zh"] .equipment-meta-nowrap {
 
   .banner {
     height: 332px;
-    background-position: center 12%;
   }
 
   .banner-grid {
     padding: 14px;
+  }
+
+  .banner-control {
+    display: none;
   }
 
   .banner-copy h2 {

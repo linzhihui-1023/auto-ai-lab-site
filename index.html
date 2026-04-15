@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>汽车人工智能实验室</title>
-  <link rel="stylesheet" href="site.css?v=20260415g">
+  <link rel="stylesheet" href="site.css?v=20260415i">
 </head>
 <body data-page="home" data-title-zh="汽车人工智能实验室" data-title-en="Automotive Artificial Intelligence Laboratory">
   <header class="site-top">
@@ -45,12 +45,24 @@
 
   <main class="page">
     <div class="container">
-      <section class="banner">
+      <section class="banner" aria-label="首页封面图">
+        <div class="banner-slides">
+          <img class="banner-slide is-active" src="assets/home-banner.jpeg" alt="厦门理工学院校门">
+          <img class="banner-slide" src="assets/home-cover-campus-1.jpeg" alt="厦门理工学院校园湖景">
+          <img class="banner-slide" src="assets/home-cover-campus-2.jpeg" alt="厦门理工学院校园航拍">
+        </div>
         <div class="banner-grid">
           <div class="banner-copy">
             <h2 data-zh="汽车人工智能实验室" data-en="Automotive Artificial Intelligence Laboratory">汽车人工智能实验室</h2>
             <p data-zh="Automotive Artificial Intelligence Laboratory" data-en="Research platform for intelligent vehicles, AI systems and smart mobility.">Automotive Artificial Intelligence Laboratory</p>
           </div>
+        </div>
+        <button class="banner-control banner-control-prev" type="button" aria-label="上一张封面">‹</button>
+        <button class="banner-control banner-control-next" type="button" aria-label="下一张封面">›</button>
+        <div class="banner-dots" aria-label="封面图切换">
+          <button class="banner-dot is-active" type="button" aria-label="切换到第 1 张封面"></button>
+          <button class="banner-dot" type="button" aria-label="切换到第 2 张封面"></button>
+          <button class="banner-dot" type="button" aria-label="切换到第 3 张封面"></button>
         </div>
       </section>
 
@@ -125,6 +137,6 @@
       </footer>
     </div>
   </main>
-  <script src="site.js?v=20260415g"></script>
+  <script src="site.js?v=20260415i"></script>
 </body>
 </html>
