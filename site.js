@@ -33,7 +33,7 @@ function applyLanguage(lang) {
   i18nNodes.forEach((node) => {
     const value = node.dataset[lang];
     if (!value) return;
-    if (value.includes("<br>")) {
+    if (value.includes("<")) {
       node.innerHTML = value;
     } else {
       node.textContent = value;
