@@ -207,20 +207,67 @@ button {
 .banner {
   height: 470px;
   border: 1px solid var(--line);
-  background:
-    linear-gradient(180deg, rgba(8, 31, 54, 0.04), rgba(8, 31, 54, 0.14) 72%, rgba(8, 31, 54, 0.26)),
-    url("assets/home-banner.jpeg?v=20260414d") center 8% / cover no-repeat,
-    #dce7f4;
+  background: #dce7f4;
   position: relative;
   overflow: hidden;
+}
+
+.banner::before,
+.banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.banner::before {
+  background-image: url("assets/home-cover-campus-1.jpeg");
+  animation: bannerCampusOne 14s infinite;
+}
+
+.banner::after {
+  background-image: url("assets/home-cover-campus-2.jpeg");
+  animation: bannerCampusTwo 14s infinite;
+}
+
+@keyframes bannerCampusOne {
+  0%,
+  42% {
+    opacity: 1;
+  }
+  50%,
+  92% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bannerCampusTwo {
+  0%,
+  42% {
+    opacity: 0;
+  }
+  50%,
+  92% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .banner-grid {
   position: absolute;
   inset: 0;
+  z-index: 1;
   padding: 24px 28px;
   display: flex;
   align-items: flex-end;
+  background: linear-gradient(180deg, rgba(8, 31, 54, 0.04), rgba(8, 31, 54, 0.14) 72%, rgba(8, 31, 54, 0.28));
 }
 
 .banner-copy {
