@@ -6,7 +6,8 @@ const videos = [...document.querySelectorAll("video")];
 const pageKey = document.body.dataset.page || "";
 
 videos.forEach((video) => {
-  video.volume = 0.25;
+  video.muted = true;
+  video.volume = 0;
 });
 
 if (menuToggle && nav) {

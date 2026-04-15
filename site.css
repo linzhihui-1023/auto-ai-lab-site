@@ -407,7 +407,8 @@ button {
 }
 
 .research-figure-inline {
-  margin-top: 36px;
+  margin-top: 72px;
+  padding-top: 10px;
 }
 
 .research-visuals {
@@ -1713,6 +1714,11 @@ body[data-lang="zh"] .equipment-meta-nowrap {
 
   .research-block p {
     line-height: 1.82;
+  }
+
+  .research-figure-inline {
+    margin-top: 42px;
+    padding-top: 6px;
   }
 
   .research-figure-image-inline.is-driving-inline,
