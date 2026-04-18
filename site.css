@@ -1343,37 +1343,6 @@ body[data-lang="zh"] .equipment-meta-nowrap {
   border-top: 1px solid #eef3f7;
 }
 
-.join-layout {
-  position: relative;
-  display: block;
-  padding-right: 270px;
-  min-height: 320px;
-  align-items: start;
-  overflow: hidden;
-}
-
-.join-layout::after {
-  content: "";
-  position: absolute;
-  top: 8px;
-  right: 168px;
-  width: 350px;
-  height: 390px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.09)),
-    url("assets/join-photo-swans.jpeg") center/cover no-repeat;
-  filter: brightness(1) contrast(0.97);
-  opacity: 0.74;
-  -webkit-mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.96) 54%, rgba(0, 0, 0, 0.6) 78%, transparent 100%);
-  mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.96) 54%, rgba(0, 0, 0, 0.6) 78%, transparent 100%);
-}
-
-.join-content {
-  min-width: 0;
-  position: relative;
-  z-index: 1;
-}
-
 .join-subtitle {
   margin-top: 12px !important;
   color: #17324b !important;
@@ -1449,10 +1418,6 @@ body[data-lang="zh"] .equipment-meta-nowrap {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .join-layout {
-    padding-right: 220px;
-    min-height: 300px;
-  }
 }
 
 @media (max-width: 900px) {
@@ -1520,6 +1485,7 @@ body[data-lang="zh"] .equipment-meta-nowrap {
   .equipment-photo-grid-robots {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
 }
 
 @media (max-width: 640px) {
@@ -1541,15 +1507,6 @@ body[data-lang="zh"] .equipment-meta-nowrap {
 
   .equipment-photo-grid-robots .equipment-photo-real {
     height: 240px;
-  }
-
-  .join-layout {
-    padding-right: 0;
-    min-height: 0;
-  }
-
-  .join-layout::after {
-    display: none;
   }
 }
 
