@@ -665,6 +665,11 @@ button {
   justify-content: start;
 }
 
+.equipment-photo-grid-ai {
+  grid-template-columns: minmax(420px, 720px);
+  justify-content: start;
+}
+
 .equipment-photo-grid-robots {
   grid-template-columns: repeat(3, 220px);
   justify-content: start;
@@ -695,6 +700,10 @@ button {
   overflow: hidden;
 }
 
+.equipment-photo-card-ai {
+  width: min(100%, 720px);
+}
+
 .equipment-photo-grid-hil .equipment-photo-card,
 .equipment-photo-grid-robots .equipment-photo-card {
   width: 220px;
@@ -711,6 +720,14 @@ button {
 .equipment-photo-real-vehicle-size {
   width: 220px;
   height: 220px;
+  object-fit: contain;
+}
+
+.equipment-photo-real-ai {
+  width: 100%;
+  height: auto;
+  max-width: 720px;
+  max-height: none;
   object-fit: contain;
 }
 
@@ -1450,6 +1467,10 @@ body[data-lang="zh"] .equipment-meta-nowrap {
     justify-content: stretch;
   }
 
+  .equipment-photo-grid-ai {
+    grid-template-columns: 1fr;
+  }
+
   .equipment-photo-grid-hil > :nth-child(3) {
     grid-column: auto;
   }
@@ -1494,6 +1515,10 @@ body[data-lang="zh"] .equipment-meta-nowrap {
   }
 
   .equipment-photo-grid-right {
+    grid-template-columns: 1fr;
+  }
+
+  .equipment-photo-grid-ai {
     grid-template-columns: 1fr;
   }
 
